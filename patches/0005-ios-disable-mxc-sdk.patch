@@ -1,0 +1,21 @@
+diff --git a/codex-rs/mxc-sandbox/Cargo.toml b/codex-rs/mxc-sandbox/Cargo.toml
+index 2cd39d5..2adbd97 100644
+--- a/codex-rs/mxc-sandbox/Cargo.toml
++++ b/codex-rs/mxc-sandbox/Cargo.toml
+@@ -22,7 +22,6 @@
+ codex-utils-absolute-path = { workspace = true }
+ codex-utils-path-uri = { workspace = true }
+ codex-windows-sandbox = { workspace = true }
+-mxc-sdk = { workspace = true }
+ serde = { workspace = true, features = ["derive"] }
+ serde_json = { workspace = true }
+ thiserror = { workspace = true }
+@@ -30,4 +29,8 @@
++# The MXC SDK does not currently compile for iOS.
++[target.'cfg(not(target_os = "ios"))'.dependencies]
++mxc-sdk = { workspace = true }
++
+ [target.'cfg(windows)'.dependencies]
+ flatbuffers = { workspace = true }
+ # 1.2.4 imports OneCore_apiset, which the GNU Windows toolchain does not ship.
+ tracelogging = "=1.2.3"

@@ -69,6 +69,8 @@ mkdir -p "$scratch_dir"
 cargo_home="$scratch_dir/cargo-home"
 mkdir -p "$cargo_home"
 export CARGO_HOME="$cargo_home"
+# Cargo libgit2 fails against chromium.googlesource.com on macOS runners.
+export CARGO_NET_GIT_FETCH_WITH_CLI=true
 export CARGO_TARGET_DIR="$scratch_dir/target"
 # rustc embeds source paths (panic locations, debug info) for the checkout and
 # every registry crate. Remap them so the binary does not carry the build
