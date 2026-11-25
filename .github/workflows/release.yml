@@ -62,6 +62,12 @@ jobs:
         run: make source
 
       - name: Build packages
+        env:
+          # The standard arm64 macOS runner only has three cores. Thin LTO and
+          # line-table debug info made the iOS CLI build alone take 4h32m.
+          CARGO_PROFILE_RELEASE_LTO: "false"
+          CARGO_PROFILE_RELEASE_DEBUG: "false"
+          CARGO_PROFILE_RELEASE_CODEGEN_UNITS: "16"
         run: make debs
 
       - name: Summarize
