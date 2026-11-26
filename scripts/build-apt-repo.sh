@@ -60,6 +60,7 @@ done
 (
     cd "$site_dir"
     dpkg-scanpackages --multiversion pool /dev/null >Packages
+    sed -i "s|^Depiction:.*|Depiction: ${repository_url}|" Packages
     gzip -9nc Packages >Packages.gz
     xz -9ec Packages >Packages.xz
 )
