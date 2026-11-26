@@ -46,8 +46,6 @@ jobs:
           gh release download --dir build/release-assets --pattern '*.deb' --pattern SHA256SUMS --clobber
       - uses: actions/configure-pages@v5
         id: pages
-        with:
-          enablement: true
       - name: Build Pages site and APT repository
         run: |
           rm -rf build/pages
