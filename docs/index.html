@@ -1,15 +1,39 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex">
-    <meta http-equiv="refresh" content="0; url=https://apt.owngoal.dev/">
-    <link rel="canonical" href="https://apt.owngoal.dev/">
-    <title>codex</title>
-    <script>location.replace("https://apt.owngoal.dev/");</script>
+    <title>xyouo Codex 越狱源</title>
+    <style>
+      :root { color-scheme: light dark; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
+      body { max-width: 720px; margin: 3rem auto; padding: 0 1.25rem; line-height: 1.6; }
+      code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+      pre { overflow-x: auto; padding: 1rem; border: 1px solid #8886; border-radius: 0.75rem; }
+      table { width: 100%; border-collapse: collapse; }
+      th, td { padding: 0.5rem; border-bottom: 1px solid #8884; text-align: left; }
+    </style>
   </head>
   <body>
-    <p>Redirecting to <a href="https://apt.owngoal.dev/">apt.owngoal.dev</a>…</p>
+    <h1>xyouo Codex 越狱源</h1>
+    <p>仅供自用。这里持续提供最新稳定版 Codex 的 rootless 与 roothide 安装包。</p>
+
+    <h2>添加软件源</h2>
+    <p>在 Sileo 中添加以下地址，并接受未签名源的提示：</p>
+    <pre>https://xyouo.github.io/codex/</pre>
+
+    <h2>选择架构</h2>
+    <table>
+      <thead><tr><th>启动器</th><th>包架构</th></tr></thead>
+      <tbody>
+        <tr><td>Dopamine / palera1n rootless</td><td><code>iphoneos-arm64</code></td></tr>
+        <tr><td>RootHide Dopamine</td><td><code>iphoneos-arm64e</code></td></tr>
+      </tbody>
+    </table>
+    <p>不确定时运行 <code>dpkg --print-architecture</code>。两种包内的程序都是同一个 arm64 二进制。</p>
+
+    <h2>相关链接</h2>
+    <p><a href="https://github.com/xyouo/codex/releases">GitHub Releases</a> · <a href="https://github.com/xyouo/codex">源码</a></p>
+    <p>该源自用且未签名，因此使用 <code>trusted=yes</code>；不要把下载地址用于不可信环境。</p>
   </body>
 </html>

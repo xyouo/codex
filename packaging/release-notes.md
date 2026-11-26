@@ -11,7 +11,7 @@ The architecture field names the **bootstrap layout, not the CPU**. Both package
 
 Not sure? Ask the device: `dpkg --print-architecture`.
 
-Requires **iOS @MIN_IOS_MAJOR@ or later** and a bootstrap that provides a shell. Or add the [OwnGoal Studio repository](https://github.com/owngoal-dev/owngoal-packages) and let your package manager pick.
+Requires **iOS @MIN_IOS_MAJOR@ or later** and a bootstrap that provides a shell. Or add the self-use source `https://xyouo.github.io/codex/` and let your package manager pick.
 
 ## Usage
 
@@ -24,11 +24,11 @@ daemon are unavailable in this mode. You do not need to add the option yourself.
 
 ## About this build
 
-Upstream [`openai/codex@@UPSTREAM_SHORT@`](https://github.com/openai/codex/commit/@UPSTREAM_REF@), plus the patches that port it to an iOS userspace on custom firmware. The binary is a Rust executable: it is **not** linked with libvroot, so it has to probe for the bootstrap's shell instead of trusting `/bin/sh`. See [`patches/`](https://github.com/owngoal-dev/codex/tree/@TAG@/patches).
+Upstream [`openai/codex@@UPSTREAM_SHORT@`](https://github.com/openai/codex/commit/@UPSTREAM_REF@), plus the patches that port it to an iOS userspace on custom firmware. The binary is a Rust executable: it is **not** linked with libvroot, so it has to probe for the bootstrap's shell instead of trusting `/bin/sh`. See [`patches/`](https://github.com/xyouo/codex/tree/@TAG@/patches).
 
 Verify your download against `SHA256SUMS`.
 
-**Full changelog**: https://github.com/owngoal-dev/codex/commits/@TAG@
+**Full changelog**: https://github.com/xyouo/codex/commits/@TAG@
 
 This build follows the newest stable Codex release and includes native package
 details with release notes in Sileo. Dependency patches tolerate unrelated

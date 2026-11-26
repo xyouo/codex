@@ -6,8 +6,9 @@ for both **roothide** and **rootless** bootstraps.
 
 ## Install
 
-From the [OwnGoal Studio repository](https://github.com/owngoal-dev/owngoal-packages),
-or grab the `.deb` for your bootstrap from
+Add `https://xyouo.github.io/codex/` as a source in Sileo. It is a self-use
+unsigned repository, so accept Sileo's trust prompt. You can also grab the
+`.deb` for your bootstrap from
 [Releases](../../releases) and `dpkg -i` it:
 
 | bootstrap | package architecture |

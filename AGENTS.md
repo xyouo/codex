@@ -103,6 +103,14 @@ scripts/install-device.sh    install over SSH and smoke-test (dev only)
 build/                       everything generated; not source
 ```
 
+## Self-use Pages repository
+
+`Pages` deploys a flat APT repository built at runtime from the latest
+non-draft GitHub Release. The two current `.deb` assets stay out of git; the
+workflow verifies `SHA256SUMS`, generates `Packages`, compressed indexes and
+`Release`, then publishes the latest version only to stay under the Pages size
+limit. The source is unsigned and must be configured with `trusted=yes`.
+
 ## Build & verify
 
 - `make check` — script syntax, config sanity, patch set, packaging inputs
